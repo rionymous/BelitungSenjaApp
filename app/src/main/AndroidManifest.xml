@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.belitungsenja.travelapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_belitungsenja"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_belitungsenja_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ProfileEdit"
+            android:parentActivityName=".Profile" />
+        <activity
+            android:name=".Profile"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Tiket"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".SuccessBooking" />
+        <activity
+            android:name=".Booking"
+            android:parentActivityName=".InfoPaket" />
+        <activity
+            android:name=".InfoPaket"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ForgotPassword" />
+        <activity android:name=".SignUpSuccess" />
+        <activity
+            android:name=".SignUpTwo"
+            android:parentActivityName=".SignUpOne" />
+        <activity
+            android:name=".SignUpOne"
+            android:parentActivityName=".GetStarted" />
+        <activity
+            android:name=".SignIn"
+            android:parentActivityName=".GetStarted" />
+        <activity android:name=".GetStarted" />
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

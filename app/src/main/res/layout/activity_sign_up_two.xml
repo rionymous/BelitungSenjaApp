@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignUpTwo">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/toolbar" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/belitung" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+
+                <com.github.florent37.shapeofview.shapes.CircleView
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="35dp"
+                    app:shape_circle_borderColor="@color/colorPrimary"
+                    app:shape_circle_borderWidth="1dp">
+
+                    <ImageView
+                        android:id="@+id/pic_photo_register_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerCrop"
+                        android:background="@color/colorPrimary"
+                        android:src="@drawable/ic_account_circle" />
+                </com.github.florent37.shapeofview.shapes.CircleView>
+
+                <EditText
+                    android:id="@+id/fullname"
+                    style="@style/CustomEditText"
+                    android:hint="Full Name"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/phonenumber"
+                    style="@style/CustomEditText"
+                    android:hint="Phone Number"
+                    android:inputType="phone" />
+
+                <EditText
+                    android:id="@+id/bio"
+                    style="@style/CustomEditText"
+                    android:hint="Bio"
+                    android:inputType="textShortMessage" />
+
+                <Button
+                    android:id="@+id/btnCreateAccount"
+                    style="@style/ButtonPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="@dimen/margin_16dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="@dimen/margin_16dp"
+                    android:text="Create An Account"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

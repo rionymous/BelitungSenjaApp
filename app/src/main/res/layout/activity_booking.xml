@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical"
+    tools:context=".Booking">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/toolbar" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:layout_margin="@dimen/margin_16dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/gambarPaket"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/overlay_dark_30" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/namaPaket"
+                            style="@style/TextAppearance.AppCompat.Large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/permanentmarker"
+                            android:gravity="center"
+                            android:hint="Nama Paket Wisata"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/durasiPaket"
+                            style="@style/TextAppearance.AppCompat.Large"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/permanentmarker"
+                            android:gravity="center"
+                            android:hint="Durasi Paket Wisata"
+                            android:textColor="@color/colorPrimary" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_16dp"
+                android:layout_marginRight="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/margin_16dp"
+                    android:text="Balance"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Rp "
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/holo_green_light"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/balanceUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="0"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/holo_green_light"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/fullname"
+                style="@style/CustomEditText"
+                android:hint="Full Name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/email"
+                style="@style/CustomEditText"
+                android:hint="E-mail Address"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/phonenumber"
+                style="@style/CustomEditText"
+                android:hint="Phone Number"
+                android:inputType="number"
+                tools:ignore="TextFields" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/kurangi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_remove" />
+
+                <TextView
+                    android:id="@+id/jumlahtamu"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/margin_10dp"
+                    android:paddingRight="@dimen/margin_10dp"
+                    android:text="1"
+                    android:textSize="20sp" />
+
+                <ImageButton
+                    android:id="@+id/tambahi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_add" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="95dp"
+                    android:layout_marginLeft="95dp"
+                    android:gravity="start|center"
+                    android:text="Total:"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/total"
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="start|center"
+                    android:hint="0"
+                    android:padding="12dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_16dp"
+                android:layout_marginRight="@dimen/margin_16dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/datedeparture"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_date_range"
+                    android:drawableRight="@drawable/ic_date_range"
+                    android:focusable="false"
+                    android:hint="Date of Arrival"
+                    android:padding="12dp"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/timedeparture"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:layout_marginLeft="@dimen/margin_16dp"
+                    android:background="@android:color/white"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_access_time"
+                    android:drawableRight="@drawable/ic_access_time"
+                    android:focusable="false"
+                    android:hint="Time of Arrive"
+                    android:padding="12dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_reservasi"
+                style="@style/ButtonPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/margin_16dp"
+                android:text="Reservasi Tiket"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

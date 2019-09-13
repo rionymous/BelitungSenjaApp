@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "608555662300",
+    "firebase_url": "https://belitung-senja.firebaseio.com",
+    "project_id": "belitung-senja",
+    "storage_bucket": "belitung-senja.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608555662300:android:b76ffc610e476c5316ed19",
+        "android_client_info": {
+          "package_name": "com.belitungsenja.travelapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608555662300-j5d7lh3qs5srjba6rl32segl9qr8omvf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.belitungsenja.travelapp",
+            "certificate_hash": "8bb2f95e5dd0529577217a1c33176ea3409cbbae"
+          }
+        },
+        {
+          "client_id": "608555662300-a9m0vsr80if5ba2jpl2r7c9o3da826qo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEUlLBK9OrIHObQWXc9kPtwF7rzu-ZLSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608555662300-a9m0vsr80if5ba2jpl2r7c9o3da826qo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
