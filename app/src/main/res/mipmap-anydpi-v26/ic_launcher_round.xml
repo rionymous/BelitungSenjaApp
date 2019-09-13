@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Triono Hidayat on 9/13/19 10:00 PM
+  ~ Copyright © 2019 . All rights reserved.
+  ~ Last modified 9/8/19 7:40 PM
+  -->
+
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
     <background android:drawable="@drawable/ic_launcher_background" />
     <foreground android:drawable="@drawable/ic_launcher_foreground" />

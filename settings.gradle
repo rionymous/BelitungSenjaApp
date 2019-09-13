@@ -1,2 +1,8 @@
+/*
+ * Created by Triono Hidayat on 9/13/19 10:00 PM
+ * Copyright © 2019 . All rights reserved.
+ * Last modified 9/8/19 7:39 PM
+ */
+
 include ':app'
 rootProject.name='Belitung Senja'

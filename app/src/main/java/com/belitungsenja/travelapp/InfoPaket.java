@@ -1,3 +1,9 @@
+/*
+ * Created by Triono Hidayat on 9/13/19 10:00 PM
+ * Copyright © 2019 . All rights reserved.
+ * Last modified 9/12/19 10:25 AM
+ */
+
 package com.belitungsenja.travelapp;
 
 import androidx.annotation.NonNull;

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Triono Hidayat on 9/13/19 10:00 PM
+  ~ Copyright © 2019 . All rights reserved.
+  ~ Last modified 9/9/19 8:57 AM
+  -->
+
 <resources>
     <dimen name="margin_10dp">10dp</dimen>
     <dimen name="margin_16dp">16dp</dimen>

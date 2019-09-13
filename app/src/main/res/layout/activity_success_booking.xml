@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Triono Hidayat on 9/13/19 10:00 PM
+  ~ Copyright © 2019 . All rights reserved.
+  ~ Last modified 9/9/19 4:37 PM
+  -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,14 +15,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <ImageView
             android:layout_margin="@dimen/margin_16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
-            android:src="@drawable/icon_color" />
+            android:src="@drawable/icon_color"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
