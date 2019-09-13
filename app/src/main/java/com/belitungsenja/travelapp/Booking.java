@@ -1,16 +1,11 @@
 /*
- * Created by Triono Hidayat on 9/13/19 10:00 PM
+ * Created by Triono Hidayat on 9/13/19 10:38 PM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/13/19 9:53 AM
+ * Last modified 9/13/19 10:37 PM
  */
 
 package com.belitungsenja.travelapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -25,14 +20,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -161,7 +158,6 @@ public class Booking extends AppCompatActivity {
             }
         });
 
-
         myCalendar = Calendar.getInstance();
         date = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -208,7 +204,6 @@ public class Booking extends AppCompatActivity {
             }
         });
 
-
         Button button = findViewById(R.id.btn_reservasi);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -219,7 +214,7 @@ public class Booking extends AppCompatActivity {
                 reference3.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        reference3.getRef().child("id_ticket").setValue(namaPaket.getText().toString()+ nomor_transaksi);
+                        reference3.getRef().child("id_ticket").setValue(namaPaket.getText().toString() + nomor_transaksi);
                         reference3.getRef().child("nama_paket").setValue(namaPaket.getText().toString());
                         reference3.getRef().child("durasi").setValue(durasiPaket.getText().toString());
                         reference3.getRef().child("nama").setValue(fullname.getText().toString());
@@ -263,9 +258,9 @@ public class Booking extends AppCompatActivity {
         tanggal.setText(sdf.format(myCalendar.getTime()));
     }
 
-    public void getUsernameLocal(){
+    public void getUsernameLocal() {
         SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-        username_key_new = sharedPreferences.getString(username_key,"");
+        username_key_new = sharedPreferences.getString(username_key, "");
     }
 
 }

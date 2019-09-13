@@ -1,15 +1,10 @@
 /*
- * Created by Triono Hidayat on 9/13/19 10:00 PM
+ * Created by Triono Hidayat on 9/13/19 10:38 PM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/12/19 5:43 AM
+ * Last modified 9/13/19 10:37 PM
  */
 
 package com.belitungsenja.travelapp;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -21,6 +16,11 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -52,7 +52,6 @@ public class SignUpTwo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_two);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Register to Belitung Senja");

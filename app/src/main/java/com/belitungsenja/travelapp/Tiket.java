@@ -1,18 +1,18 @@
 /*
- * Created by Triono Hidayat on 9/13/19 10:00 PM
+ * Created by Triono Hidayat on 9/13/19 10:38 PM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/13/19 5:18 PM
+ * Last modified 9/13/19 10:37 PM
  */
 
 package com.belitungsenja.travelapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -80,8 +80,8 @@ public class Tiket extends AppCompatActivity {
         });*/
     }
 
-    public void getUsernameLocal(){
+    public void getUsernameLocal() {
         SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-        username_key_new = sharedPreferences.getString(username_key,"");
+        username_key_new = sharedPreferences.getString(username_key, "");
     }
 }

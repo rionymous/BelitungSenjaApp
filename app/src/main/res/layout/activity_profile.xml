@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Created by Triono Hidayat on 9/13/19 10:00 PM
+  ~ Created by Triono Hidayat on 9/13/19 10:38 PM
   ~ Copyright © 2019 . All rights reserved.
-  ~ Last modified 9/13/19 6:35 AM
+  ~ Last modified 9/13/19 10:36 PM
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -42,7 +42,8 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_account_circle" />
+                android:src="@drawable/ic_account_circle"
+                tools:ignore="ContentDescription" />
 
         </com.github.florent37.shapeofview.shapes.CircleView>
 
@@ -56,7 +57,7 @@
                 style="@style/TextAppearance.AppCompat.Large"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Profile"
+                android:text="@string/profile"
                 android:textColor="@android:color/black"
                 android:textStyle="bold" />
 
@@ -71,7 +72,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:onClick="editprofile"
-                android:text="Edit"
+                android:text="@string/edit"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold" />
         </RelativeLayout>

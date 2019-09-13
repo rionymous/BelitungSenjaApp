@@ -1,16 +1,16 @@
 /*
- * Created by Triono Hidayat on 9/13/19 10:00 PM
+ * Created by Triono Hidayat on 9/13/19 10:38 PM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/13/19 6:42 PM
+ * Last modified 9/13/19 10:37 PM
  */
 
 package com.belitungsenja.travelapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -24,7 +24,6 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         getUsernameLocal();
-
 
     }
 

@@ -1,7 +1,7 @@
 /*
- * Created by Triono Hidayat on 9/13/19 10:00 PM
+ * Created by Triono Hidayat on 9/13/19 10:38 PM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/13/19 4:41 PM
+ * Last modified 9/13/19 10:36 PM
  */
 
 package com.belitungsenja.travelapp;
@@ -23,7 +23,7 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.MyViewHold
     Context context;
     ArrayList<MyTicket> myTicket;
 
-    public TicketAdapter (Context c, ArrayList<MyTicket> p){
+    public TicketAdapter(Context c, ArrayList<MyTicket> p) {
         context = c;
         myTicket = p;
     }
@@ -47,7 +47,7 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.MyViewHold
             @Override
             public void onClick(View view) {
                 Intent gototicketdetail = new Intent(context, Tiket.class);
-                gototicketdetail.putExtra("nama_paket",getNamaPaket);
+                gototicketdetail.putExtra("nama_paket", getNamaPaket);
                 context.startActivity(gototicketdetail);
             }
         });
