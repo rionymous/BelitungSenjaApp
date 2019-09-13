@@ -7,6 +7,15 @@
 <resources>
     <string name="app_name">Belitung Senja</string>
     <string name="pw_textview">**********</string>
+    <string name="paket_wisata_hemat">Paket Wisata Hemat</string>
+    <string name="paket_wisata_reguler">Paket Wisata Reguler</string>
+    <string name="paket_wisata_keluarga">Paket Wisata Keluarga</string>
+    <string name="paket_wisata_honeymoon">Paket Wisata Honeymoon</string>
+    <string name="paket_hemat">Paket Hemat</string>
+    <string name="_3d2n">3D2N</string>
+    <string name="paket_keluarga">Paket Keluarga</string>
+    <string name="_4d3n">4D3N</string>
+    <string name="paket_honeymoon">Paket Honeymoon</string>
 
 
 </resources>

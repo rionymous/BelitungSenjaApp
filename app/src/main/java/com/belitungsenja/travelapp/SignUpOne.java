@@ -82,7 +82,7 @@ public class SignUpOne extends AppCompatActivity {
                         dataSnapshot.getRef().child("username").setValue(username.getText().toString());
                         dataSnapshot.getRef().child("email").setValue(email.getText().toString());
                         dataSnapshot.getRef().child("password").setValue(password.getText().toString());
-                        dataSnapshot.getRef().child("balance").setValue(2000000);
+                        dataSnapshot.getRef().child("balance").setValue(10000000);
                     }
 
                     @Override

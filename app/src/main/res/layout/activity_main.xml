@@ -47,7 +47,6 @@
                     android:layout_gravity="center"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
-                    android:elevation="4dp"
                     app:shape_circle_borderColor="@color/colorPrimary"
                     app:shape_circle_borderWidth="1dp">
 
@@ -73,12 +72,12 @@
 
                     <TextView
                         android:id="@+id/fullname"
-                        style="@style/TextAppearance.AppCompat.Headline"
-                        android:layout_width="175dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:maxLines="1"
-                        android:hint="User fullnam"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+                        android:hint="User fullname"
+                        android:textColor="@android:color/black"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
                     <TextView
                         android:id="@+id/bio"
@@ -154,7 +153,7 @@
                     <RelativeLayout
                         android:layout_width="200dp"
                         android:layout_height="175dp"
-                        android:paddingRight="8dp"
+                        android:paddingEnd="8dp"
                         android:paddingBottom="8dp">
 
                         <ImageView
@@ -170,14 +169,13 @@
                             android:layout_height="match_parent"
                             android:background="@color/overlay_dark_40" />
 
-
                         <TextView
                             style="@style/TextAppearance.AppCompat.Large"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:fontFamily="@font/permanentmarker"
                             android:gravity="center"
-                            android:text="Paket Wisata\nHemat"
+                            android:text="@string/paket_wisata_hemat"
                             android:textAlignment="gravity"
                             android:textColor="@color/colorPrimary" />
 
@@ -186,7 +184,7 @@
                     <RelativeLayout
                         android:layout_width="200dp"
                         android:layout_height="175dp"
-                        android:paddingLeft="8dp"
+                        android:paddingStart="8dp"
                         android:paddingBottom="8dp">
 
                         <ImageView
@@ -209,7 +207,7 @@
                             android:layout_height="match_parent"
                             android:fontFamily="@font/permanentmarker"
                             android:gravity="center"
-                            android:text="Paket Wisata\nReguler"
+                            android:text="@string/paket_wisata_reguler"
                             android:textAlignment="gravity"
                             android:textColor="@color/colorPrimary" />
 
@@ -249,7 +247,7 @@
                             android:layout_height="match_parent"
                             android:fontFamily="@font/permanentmarker"
                             android:gravity="center"
-                            android:text="Paket Wisata\nKeluarga"
+                            android:text="@string/paket_wisata_keluarga"
                             android:textAlignment="gravity"
                             android:textColor="@color/colorPrimary" />
 
@@ -259,7 +257,7 @@
                     <RelativeLayout
                         android:layout_width="200dp"
                         android:layout_height="175dp"
-                        android:paddingLeft="8dp"
+                        android:paddingStart="8dp"
                         android:paddingTop="8dp">
 
                         <ImageView
@@ -282,7 +280,7 @@
                             android:layout_height="match_parent"
                             android:fontFamily="@font/permanentmarker"
                             android:gravity="center"
-                            android:text="Paket Wisata\nHoneymoon"
+                            android:text="@string/paket_wisata_honeymoon"
                             android:textAlignment="gravity"
                             android:textColor="@color/colorPrimary" />
 
@@ -347,7 +345,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="8dp"
+                                android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
                                 android:orientation="vertical">
 
@@ -355,14 +353,14 @@
                                     style="@style/TextAppearance.AppCompat.Medium"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Paket Hemat"
+                                    android:text="@string/paket_hemat"
                                     android:textColor="@android:color/white"
                                     android:textStyle="bold" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="3D2N"
+                                    android:text="@string/_3d2n"
                                     android:textColor="@android:color/white" />
                             </LinearLayout>
 
@@ -399,14 +397,14 @@
                                     style="@style/TextAppearance.AppCompat.Medium"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Paket Keluarga"
+                                    android:text="@string/paket_keluarga"
                                     android:textColor="@android:color/white"
                                     android:textStyle="bold" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="4D3N"
+                                    android:text="@string/_4d3n"
                                     android:textColor="@android:color/white" />
                             </LinearLayout>
 
@@ -432,7 +430,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="8dp"
+                                android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
                                 android:orientation="vertical">
 
@@ -440,14 +438,14 @@
                                     style="@style/TextAppearance.AppCompat.Medium"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Paket Honeymoon"
+                                    android:text="@string/paket_honeymoon"
                                     android:textColor="@android:color/white"
                                     android:textStyle="bold" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="3D2N"
+                                    android:text="@string/_3d2n"
                                     android:textColor="@android:color/white" />
                             </LinearLayout>
 
