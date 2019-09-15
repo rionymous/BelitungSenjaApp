@@ -1,14 +1,15 @@
 /*
- * Created by Triono Hidayat on 9/13/19 10:00 PM
+ * Created by Android Rion on 9/15/19 10:28 PM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/13/19 6:01 AM
+ * Last modified 9/14/19 2:41 PM
+ * Kunjungi androidrion.com untuk tutorial Android Studio
  */
 
 package com.belitungsenja.travelapp;
 
 public class MyTicket {
 
-    private String nama_paket, durasi, jumlah_tamu;
+    String nama_paket, durasi, jumlah_tamu;
 
     public MyTicket() {
     }

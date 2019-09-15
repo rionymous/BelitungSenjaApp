@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Created by Triono Hidayat on 9/13/19 10:00 PM
+  ~ Created by Android Rion on 9/15/19 10:28 PM
   ~ Copyright © 2019 . All rights reserved.
-  ~ Last modified 9/11/19 12:27 PM
+  ~ Last modified 9/15/19 5:50 PM
+  ~ Kunjungi androidrion.com untuk tutorial Android Studio
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.belitungsenja.travelapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_belitungsenja"
@@ -16,22 +18,18 @@
         android:roundIcon="@mipmap/ic_belitungsenja_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".KategoriPaket"></activity>
+        <activity android:name=".Blog" />
         <activity
             android:name=".ProfileEdit"
             android:parentActivityName=".Profile" />
         <activity
             android:name=".Profile"
             android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".Tiket"
-            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Tiket" />
         <activity android:name=".SuccessBooking" />
-        <activity
-            android:name=".Booking"
-            android:parentActivityName=".InfoPaket" />
-        <activity
-            android:name=".InfoPaket"
-            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Booking" />
+        <activity android:name=".InfoPaket" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".SignUpSuccess" />

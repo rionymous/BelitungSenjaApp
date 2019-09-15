@@ -1,23 +1,23 @@
 /*
- * Created by Triono Hidayat on 9/13/19 10:00 PM
+ * Created by Android Rion on 9/15/19 10:28 PM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/12/19 10:25 AM
+ * Last modified 9/15/19 10:27 PM
+ * Kunjungi androidrion.com untuk tutorial Android Studio
  */
 
 package com.belitungsenja.travelapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -50,7 +50,7 @@ public class InfoPaket extends AppCompatActivity {
         deskripsiPaket = findViewById(R.id.deskripsiPaket);
 
         Bundle bundle = getIntent().getExtras();
-        final String jenis_tiket_baru = bundle.getString("jenis_paket");
+        final String jenis_tiket_baru = bundle.getString("populer");
 
         reference = FirebaseDatabase.getInstance().getReference().child("Paket").child(jenis_tiket_baru);
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -59,7 +59,7 @@ public class InfoPaket extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 namaPaket.setText(dataSnapshot.child("nama_paket").getValue().toString());
                 durasiPaket.setText(dataSnapshot.child("durasi").getValue().toString());
-                hargaPaket.setText("Rp " + dataSnapshot.child("harga").getValue().toString());
+                hargaPaket.setText(dataSnapshot.child("harga").getValue().toString());
                 deskripsiPaket.setText(dataSnapshot.child("deksripsi").getValue().toString());
                 namaPaket.setText(dataSnapshot.child("nama_paket").getValue().toString());
                 Picasso.with(InfoPaket.this)
@@ -85,6 +85,15 @@ public class InfoPaket extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return false;
     }
 
 }

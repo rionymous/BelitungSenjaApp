@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Created by Triono Hidayat on 9/13/19 10:00 PM
+  ~ Created by Android Rion on 9/15/19 10:28 PM
   ~ Copyright © 2019 . All rights reserved.
-  ~ Last modified 9/11/19 1:33 PM
+  ~ Last modified 9/14/19 4:06 PM
+  ~ Kunjungi androidrion.com untuk tutorial Android Studio
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -29,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/belitung" />
+            app:srcCompat="@drawable/belitung" />
 
         <View
             android:layout_width="match_parent"
@@ -57,6 +58,18 @@
                     android:layout_marginBottom="@dimen/margin_16dp"
                     app:srcCompat="@drawable/icon_color" />
 
+                <TextView
+                    android:id="@+id/great"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_16dp"
+                    android:layout_marginBottom="@dimen/margin_16dp"
+                    android:text="Register\nBelitung Senja"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/username"
@@ -79,10 +92,7 @@
 
                 <Button
                     android:id="@+id/btnContinue"
-                    style="@style/ButtonPrimaryDark"
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:layout_gravity="center_horizontal"
+                    style="@style/buttoncustom"
                     android:layout_marginLeft="@dimen/margin_16dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="@dimen/margin_16dp"

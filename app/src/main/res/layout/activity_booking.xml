@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Created by Triono Hidayat on 9/13/19 10:00 PM
+  ~ Created by Android Rion on 9/15/19 10:28 PM
   ~ Copyright © 2019 . All rights reserved.
-  ~ Last modified 9/12/19 5:28 PM
+  ~ Last modified 9/15/19 10:27 PM
+  ~ Kunjungi androidrion.com untuk tutorial Android Studio
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -68,7 +69,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/permanentmarker"
                             android:gravity="center"
-                            android:hint="Nama Paket Wisata"
+                            android:hint="@string/nama_paket"
                             android:textColor="@color/colorPrimary" />
 
                         <TextView
@@ -78,7 +79,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/permanentmarker"
                             android:gravity="center"
-                            android:hint="Durasi Paket Wisata"
+                            android:hint="@string/durasi_paket"
                             android:textColor="@color/colorPrimary" />
                     </LinearLayout>
 
@@ -119,6 +120,15 @@
                     android:textColor="@android:color/holo_green_light"
                     android:textStyle="bold" />
 
+                <ImageView
+                    android:id="@+id/notice_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_error"
+                    android:tint="@android:color/holo_red_dark"
+                    android:layout_marginLeft="@dimen/margin_10dp"
+                    android:layout_gravity="center_horizontal" />
+
             </LinearLayout>
 
             <EditText
@@ -142,15 +152,17 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="@dimen/margin_16dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/kurangi"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
+                    android:layout_height="wrap_content"
+                    android:tint="@android:color/white"
+                    android:background="@drawable/bg_btn_primary"
                     android:src="@drawable/ic_remove" />
 
                 <TextView
@@ -160,14 +172,15 @@
                     android:gravity="center"
                     android:paddingLeft="@dimen/margin_10dp"
                     android:paddingRight="@dimen/margin_10dp"
-                    android:text="1"
+                    android:hint="1"
                     android:textSize="20sp" />
 
                 <ImageButton
                     android:id="@+id/tambahi"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
+                    android:layout_height="wrap_content"
+                    android:tint="@android:color/white"
+                    android:background="@drawable/bg_btn_primary"
                     android:src="@drawable/ic_add" />
 
                 <TextView
@@ -230,7 +243,7 @@
 
             <Button
                 android:id="@+id/btn_reservasi"
-                style="@style/ButtonPrimaryDark"
+                style="@style/buttoncustom"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"

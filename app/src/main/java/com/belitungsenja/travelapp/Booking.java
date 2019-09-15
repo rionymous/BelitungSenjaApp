@@ -1,7 +1,8 @@
 /*
- * Created by Triono Hidayat on 9/13/19 10:38 PM
+ * Created by Android Rion on 9/15/19 10:28 PM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/13/19 10:37 PM
+ * Last modified 9/15/19 10:22 PM
+ * Kunjungi androidrion.com untuk tutorial Android Studio
  */
 
 package com.belitungsenja.travelapp;
@@ -10,7 +11,9 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -44,7 +47,8 @@ public class Booking extends AppCompatActivity {
     ImageButton btnplus, btnminus;
     TextView textmybalance, textJumlah, textTotal, namaPaket, durasiPaket;
     EditText fullname, email, phonenumber, datedeparture, timedeparture;
-    ImageView gambarPaket;
+    ImageView gambarPaket, notice_balance;
+    Button btn_reservasi;
     Integer mybalance = 0;
     Integer valuejumlahtiket = 1;
     Integer valuehargapaket = 0;
@@ -77,6 +81,7 @@ public class Booking extends AppCompatActivity {
         namaPaket = findViewById(R.id.namaPaket);
         durasiPaket = findViewById(R.id.durasiPaket);
         textmybalance = findViewById(R.id.balanceUser);
+        notice_balance = findViewById(R.id.notice_balance);
         fullname = findViewById(R.id.fullname);
         email = findViewById(R.id.email);
         phonenumber = findViewById(R.id.phonenumber);
@@ -86,11 +91,13 @@ public class Booking extends AppCompatActivity {
         textTotal = findViewById(R.id.total);
         datedeparture = findViewById(R.id.datedeparture);
         timedeparture = findViewById(R.id.timedeparture);
+        btn_reservasi = findViewById(R.id.btn_reservasi);
 
         textJumlah.setText(valuejumlahtiket.toString());
 
         btnminus.animate().alpha(0).setDuration(300);
         btnminus.setEnabled(false);
+        notice_balance.setVisibility(View.GONE);
 
         reference2 = FirebaseDatabase.getInstance().getReference().child("Users").child(username_key_new);
         reference2.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -115,10 +122,7 @@ public class Booking extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 namaPaket.setText(dataSnapshot.child("nama_paket").getValue().toString());
                 durasiPaket.setText(dataSnapshot.child("durasi").getValue().toString());
-                Picasso.with(Booking.this)
-                        .load(dataSnapshot.child("url_thumbnail")
-                                .getValue().toString()).centerCrop().fit()
-                        .into(gambarPaket);
+                Picasso.with(Booking.this).load(dataSnapshot.child("url_thumbnail").getValue().toString()).centerCrop().fit().into(gambarPaket);
                 valuehargapaket = Integer.valueOf(dataSnapshot.child("harga").getValue().toString());
                 valuetotalharga = valuejumlahtiket * valuehargapaket;
                 textTotal.setText(valuetotalharga.toString());
@@ -136,11 +140,21 @@ public class Booking extends AppCompatActivity {
                 valuejumlahtiket += 1;
                 textJumlah.setText(valuejumlahtiket.toString());
                 if (valuejumlahtiket > 1) {
-                    btnminus.animate().alpha(1).setDuration(300);
+                    btnminus.animate().alpha(1).setDuration(300).start();
                     btnminus.setEnabled(true);
+                }
+                if (valuejumlahtiket >= 15) {
+                    btnplus.animate().alpha(0).setDuration(300);
+                    btnplus.setEnabled(false);
                 }
                 valuetotalharga = valuehargapaket * valuejumlahtiket;
                 textTotal.setText(valuetotalharga.toString());
+                if (valuetotalharga > mybalance) {
+                    btn_reservasi.animate().translationY(250).alpha(0).setDuration(350).start();
+                    btn_reservasi.setEnabled(false);
+                    textmybalance.setTextColor(Color.parseColor("#FFCC0000"));
+                    notice_balance.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -153,8 +167,18 @@ public class Booking extends AppCompatActivity {
                     btnminus.animate().alpha(0).setDuration(300);
                     btnminus.setEnabled(false);
                 }
+                if (valuejumlahtiket < 15) {
+                    btnplus.animate().alpha(1).setDuration(300).start();
+                    btnplus.setEnabled(true);
+                }
                 valuetotalharga = valuehargapaket * valuejumlahtiket;
                 textTotal.setText(valuetotalharga.toString());
+                if (valuetotalharga < mybalance) {
+                    btn_reservasi.animate().translationY(0).alpha(1).setDuration(350).start();
+                    btn_reservasi.setEnabled(true);
+                    textmybalance.setTextColor(Color.parseColor("#FF99CC00"));
+                    notice_balance.setVisibility(View.GONE);
+                }
             }
         });
 
@@ -204,8 +228,7 @@ public class Booking extends AppCompatActivity {
             }
         });
 
-        Button button = findViewById(R.id.btn_reservasi);
-        button.setOnClickListener(new View.OnClickListener() {
+        btn_reservasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 reference3 = FirebaseDatabase.getInstance()
@@ -249,6 +272,15 @@ public class Booking extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        return false;
     }
 
     private void updateLabel() {

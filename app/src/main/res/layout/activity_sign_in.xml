@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Created by Triono Hidayat on 9/13/19 10:00 PM
+  ~ Created by Android Rion on 9/15/19 10:28 PM
   ~ Copyright © 2019 . All rights reserved.
-  ~ Last modified 9/12/19 4:31 PM
+  ~ Last modified 9/14/19 3:52 PM
+  ~ Kunjungi androidrion.com untuk tutorial Android Studio
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -29,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/belitung" />
+            app:srcCompat="@drawable/belitung" />
 
         <View
             android:layout_width="match_parent"
@@ -58,7 +59,7 @@
 
                 <TextView
                     android:id="@+id/great"
-                    style="@style/TextAppearance.AppCompat.Display1"
+                    style="@style/TextAppearance.AppCompat.Headline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -96,7 +97,7 @@
 
                 <Button
                     android:id="@+id/btnSignIn"
-                    style="@style/ButtonPrimaryDark"
+                    style="@style/buttoncustom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

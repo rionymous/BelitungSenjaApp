@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Created by Triono Hidayat on 9/13/19 10:00 PM
+  ~ Created by Android Rion on 9/15/19 10:28 PM
   ~ Copyright © 2019 . All rights reserved.
-  ~ Last modified 9/9/19 4:37 PM
+  ~ Last modified 9/14/19 4:06 PM
+  ~ Kunjungi androidrion.com untuk tutorial Android Studio
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,15 +25,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="center"
-            android:src="@drawable/icon_color"
+            app:srcCompat="@drawable/icon_color"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            style="@style/TextAppearance.AppCompat.Display1"
-            android:text="Selamat Menikmati"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:text="Selamat"
             android:textColor="@android:color/black"/>
 
 
@@ -40,15 +42,13 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:layout_marginBottom="@dimen/margin_16dp"
-            style="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@android:color/black"
-            android:text="Anda berhasil membeli tiket\ndan selamat berlibur" />
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@android:color/darker_gray"
+            android:text="Anda telah berhasil membeli\npaket wisata bersama Belitung Senja" />
 
         <Button
             android:id="@+id/btn_lihattiket"
-            style="@style/ButtonPrimaryDark"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/buttoncustom"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/margin_16dp"
             android:layout_marginLeft="@dimen/margin_16dp"

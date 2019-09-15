@@ -1,7 +1,8 @@
 <!--
-  ~ Created by Triono Hidayat on 9/13/19 10:00 PM
+  ~ Created by Android Rion on 9/15/19 10:28 PM
   ~ Copyright © 2019 . All rights reserved.
-  ~ Last modified 9/9/19 7:39 AM
+  ~ Last modified 9/14/19 4:06 PM
+  ~ Kunjungi androidrion.com untuk tutorial Android Studio
   -->
 
 <resources>
@@ -21,15 +22,17 @@
         <item name="android:layout_marginLeft">@dimen/margin_16dp</item>
         <item name="android:layout_marginRight">@dimen/margin_16dp</item>
         <item name="android:padding">12dp</item>
-        <item name="android:background">@android:color/white</item>
+        <item name="android:background">@drawable/bg_et_white</item>
         <item name="android:gravity">left</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:textCursorDrawable">@drawable/color_cursor</item>
+        <item name="android:textCursorDrawable">@color/colorPrimary</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
 
-    <style name="ButtonPrimaryDark" parent="@android:style/Widget.Button">
-        <item name="android:background">@color/colorPrimary</item>
+    <style name="buttoncustom">
+        <item name="android:background">@drawable/bg_btn_primary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
 </resources>

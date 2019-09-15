@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Created by Triono Hidayat on 9/13/19 10:00 PM
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Android Rion on 9/15/19 10:28 PM
   ~ Copyright © 2019 . All rights reserved.
-  ~ Last modified 9/12/19 7:39 AM
+  ~ Last modified 9/15/19 5:48 PM
+  ~ Kunjungi androidrion.com untuk tutorial Android Studio
   -->
 
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -87,16 +87,30 @@
                 android:text=""
                 android:textColor="@android:color/black" />
 
-            <TextView
-                android:id="@+id/hargaPaket"
-                style="@style/TextAppearance.AppCompat.Large"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="@dimen/margin_16dp"
-                android:hint="Harga Paket Wisata"
-                android:text=""
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp "
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hargaPaket"
+                    style="@style/TextAppearance.AppCompat.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Harga Paket Wisata"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/deskripsiPaket"
@@ -108,7 +122,7 @@
 
             <Button
                 android:id="@+id/btn_booking"
-                style="@style/ButtonPrimaryDark"
+                style="@style/buttoncustom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

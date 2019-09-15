@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Android Rion on 9/15/19 10:28 PM
+  ~ Copyright © 2019 . All rights reserved.
+  ~ Last modified 9/15/19 10:27 PM
+  ~ Kunjungi androidrion.com untuk tutorial Android Studio
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="@color/colorPrimary" />
+
+    <corners android:radius="5dp" />
+
+</shape>

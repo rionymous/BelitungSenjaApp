@@ -1,7 +1,8 @@
 /*
- * Created by Triono Hidayat on 9/13/19 10:38 PM
+ * Created by Android Rion on 9/15/19 10:28 PM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/13/19 10:37 PM
+ * Last modified 9/15/19 10:27 PM
+ * Kunjungi androidrion.com untuk tutorial Android Studio
  */
 
 package com.belitungsenja.travelapp;
@@ -12,7 +13,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -27,7 +30,7 @@ public class SignUpOne extends AppCompatActivity {
     EditText username, email, password;
     Button btnContinue;
 
-    DatabaseReference reference;
+    DatabaseReference reference, reference2;
 
     String USERNAME_KEY = "usernamekey";
     String username_key = "";
@@ -50,29 +53,52 @@ public class SignUpOne extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(username_key, username.getText().toString());
-                editor.apply();
+                btnContinue.setEnabled(false);
+                btnContinue.setText("Loading...");
 
-                reference = FirebaseDatabase.getInstance().getReference().child("Users").child(username.getText().toString());
-                reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                reference2 = FirebaseDatabase.getInstance().getReference().child("Users").child(username.getText().toString());
+                reference2.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        dataSnapshot.getRef().child("username").setValue(username.getText().toString());
-                        dataSnapshot.getRef().child("email").setValue(email.getText().toString());
-                        dataSnapshot.getRef().child("password").setValue(password.getText().toString());
-                        dataSnapshot.getRef().child("balance").setValue(10000000);
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            Toast.makeText(getApplicationContext(), "Username sudah tersedia!", Toast.LENGTH_SHORT).show();
+
+                            btnContinue.setEnabled(true);
+                            btnContinue.setText("Continue");
+                        } else {
+                            SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString(username_key, username.getText().toString());
+                            editor.apply();
+
+                            reference = FirebaseDatabase.getInstance().getReference().child("Users").child(username.getText().toString());
+                            reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    dataSnapshot.getRef().child("username").setValue(username.getText().toString());
+                                    dataSnapshot.getRef().child("email").setValue(email.getText().toString());
+                                    dataSnapshot.getRef().child("password").setValue(password.getText().toString());
+                                    dataSnapshot.getRef().child("balance").setValue(10000000);
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
+
+                            Intent intent = new Intent(SignUpOne.this, SignUpTwo.class);
+                            startActivity(intent);
+                        }
                     }
 
                     @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
                 });
 
-                Intent intent = new Intent(SignUpOne.this, SignUpTwo.class);
-                startActivity(intent);
+
             }
         });
     }

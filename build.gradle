@@ -1,7 +1,8 @@
 /*
- * Created by Triono Hidayat on 9/13/19 10:00 PM
+ * Created by Android Rion on 9/15/19 10:28 PM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/10/19 4:35 PM
+ * Last modified 9/14/19 3:27 PM
+ * Kunjungi androidrion.com untuk tutorial Android Studio
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -14,7 +15,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.0'
-        classpath 'com.google.gms:google-services:4.2.0'
+        classpath 'com.google.gms:google-services:4.3.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
