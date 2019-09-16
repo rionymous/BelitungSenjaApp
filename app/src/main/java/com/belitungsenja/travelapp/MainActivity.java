@@ -1,7 +1,7 @@
 /*
- * Created by Android Rion on 9/16/19 10:42 AM
+ * Created by Android Rion on 9/16/19 10:46 AM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/16/19 8:23 AM
+ * Last modified 9/16/19 10:45 AM
  * Kunjungi androidrion.com untuk tutorial Android Studio
  */
 
@@ -290,25 +290,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*kanantesti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nextStep(current_step);
-                bottomProgressDots(current_step);
-            }
-        });
-
-        kiritesti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                backStep(current_step);
-                bottomProgressDots(current_step);
-            }
-        });
-
-        String str_progress = String.format(getString(R.string.step_of), current_step, MAX_STEP);
-        testimonial.setText(str_progress);
-        bottomProgressDots(current_step);*/
     }
 
     private void prosestestimoni() {
