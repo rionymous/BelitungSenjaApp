@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~ Created by Android Rion on 9/15/19 10:28 PM
+  ~ Created by Android Rion on 9/16/19 10:42 AM
   ~ Copyright © 2019 . All rights reserved.
-  ~ Last modified 9/15/19 10:04 PM
+  ~ Last modified 9/16/19 8:08 AM
   ~ Kunjungi androidrion.com untuk tutorial Android Studio
   -->
 
@@ -31,7 +31,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!--Balance-->
+            <!--Username-->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -97,11 +97,29 @@
                     android:layout_alignParentBottom="true"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Balance"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Balance"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
+
+                        <TextView
+                            android:id="@+id/topupbalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_btn_primary"
+                            android:text="Top Up"
+                            android:layout_marginStart="@dimen/margin_10dp"
+                            android:textColor="@android:color/white"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -380,8 +398,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:clickable="true"
-                                android:onClick="paketwisatahemat"
                                 android:focusable="true"
+                                android:onClick="paketwisatahemat"
                                 android:scaleType="centerCrop" />
 
                             <View
@@ -391,8 +409,8 @@
                         </com.github.florent37.shapeofview.shapes.RoundRectView>
 
                         <TextView
-                            style="@style/TextAppearance.AppCompat.Large"
                             android:id="@+id/judulhemat"
+                            style="@style/TextAppearance.AppCompat.Large"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:fontFamily="@font/permanentmarker"
@@ -426,8 +444,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:clickable="true"
-                                android:onClick="paketwisatareguler"
                                 android:focusable="true"
+                                android:onClick="paketwisatareguler"
                                 android:scaleType="centerCrop" />
 
                             <View
@@ -480,8 +498,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:clickable="true"
-                                android:onClick="kepaketkeluarga"
                                 android:focusable="true"
+                                android:onClick="kepaketkeluarga"
                                 android:scaleType="centerCrop" />
 
                             <View
@@ -594,25 +612,24 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_16dp"
                     android:clickable="true"
-                    android:layout_marginLeft="@dimen/margin_16dp"
                     android:src="@drawable/ic_chevron_left"
                     android:tint="@color/colorPrimary" />
 
-                <TextView
-                    android:id="@+id/testimonial"
-                    style="@style/TextAppearance.AppCompat.Small"
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toStartOf="@+id/kanantesti"
-                    android:layout_marginLeft="@dimen/margin_10dp"
-                    android:layout_marginRight="@dimen/margin_10dp"
-                    android:layout_toEndOf="@+id/kiritesti"
-                    android:textColorHint="@color/colorPrimary"
-                    android:hint="Testi dari para tamu tentang liburan di pulau belitung bersama agen tour dan travel belitung senja."
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary" />
+                    android:layout_alignStart="@id/kiritesti"
+                    android:layout_alignEnd="@id/kanantesti"
+                    android:layout_margin="@dimen/spacing_xlarge">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/view_pager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
 
                 <ImageView
                     android:id="@+id/kanantesti"
@@ -628,7 +645,7 @@
                 <LinearLayout
                     android:id="@+id/layoutDots"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="25dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerVertical="true"
                     android:gravity="center"

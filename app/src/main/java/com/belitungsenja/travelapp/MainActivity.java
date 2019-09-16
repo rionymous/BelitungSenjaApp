@@ -1,17 +1,19 @@
 /*
- * Created by Android Rion on 9/15/19 10:28 PM
+ * Created by Android Rion on 9/16/19 10:42 AM
  * Copyright © 2019 . All rights reserved.
- * Last modified 9/15/19 10:27 PM
+ * Last modified 9/16/19 8:23 AM
  * Kunjungi androidrion.com untuk tutorial Android Studio
  */
 
 package com.belitungsenja.travelapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -22,6 +24,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,14 +36,23 @@ import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int MAX_STEP = 3;
-    private int current_step = 1;
+    private static final int MAX_STEP = 4;
+
+    private MyViewPagerAdapter myViewPagerAdapter;
+    private String[] testimonitamu = {
+            "Pengalaman mengelilingi pulau Belitung bersama keluarga menggunakan Tour and Travel Belitung Senja sangat menyenangkan, dengan waktu yang fleksibel kita dapat menentukan kemana saja tempat tujuan yang di inginkan.",
+            "Dengan pelayanan yang ramah dan sangat baik dari Tour Guide Gunawan, saya merasa puas dan senang traveling bersama Belitung Senja Tour and Travel.",
+            "Pelayanannya prima. Crewnya profesional semua. Mengedepankan kenyamanan dan kepuasan pelanggan",
+            "Pokoknya bisa seru2an lah pake travel ini. harga terjangkau dan gak bakalan bikin nyesel deh pake travel ini. belitungsenja.com TOP banget."
+    };
+
+    ViewPager view_pager;
 
     TextView bio, fullname, balance,
             judulpopuler1, judulpopuler2, judulpopuler3,
             durasipopuler1, durasipopuler2, durasipopuler3,
             judulhemat, judulreguler, judulkeluarga, judulhoneymoon,
-            titleBlog1, titleBlog2, titleBlog3, testimonial;
+            titleBlog1, titleBlog2, titleBlog3;
     ImageView photo_profile,
             gambarpopuler1, gambarpopuler2, gambarpopuler3,
             gambarhemat, gambarreguler, gambarkeluarga, gambarhoneymoon,
@@ -86,9 +99,7 @@ public class MainActivity extends AppCompatActivity {
         judulhoneymoon = findViewById(R.id.judulhoneymoon);
         gambarhoneymoon = findViewById(R.id.gambarHoneymoon);
 
-        kanantesti = findViewById(R.id.kanantesti);
-        testimonial = findViewById(R.id.testimonial);
-        kiritesti = findViewById(R.id.kiritesti);
+        prosestestimoni();
 
         titleBlog1 = findViewById(R.id.titleBlog1);
         imageBlog1 = findViewById(R.id.imageBlog1);
@@ -279,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        kanantesti.setOnClickListener(new View.OnClickListener() {
+        /*kanantesti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 nextStep(current_step);
@@ -297,7 +308,39 @@ public class MainActivity extends AppCompatActivity {
 
         String str_progress = String.format(getString(R.string.step_of), current_step, MAX_STEP);
         testimonial.setText(str_progress);
-        bottomProgressDots(current_step);
+        bottomProgressDots(current_step);*/
+    }
+
+    private void prosestestimoni() {
+        kanantesti = findViewById(R.id.kanantesti);
+        view_pager = findViewById(R.id.view_pager);
+        kiritesti = findViewById(R.id.kiritesti);
+
+        bottomProgressDots(0);
+
+        myViewPagerAdapter = new MyViewPagerAdapter();
+        view_pager.setAdapter(myViewPagerAdapter);
+        view_pager.addOnPageChangeListener(viewPagerPageChangeListener);
+        kanantesti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int current = view_pager.getCurrentItem() + 1;
+                if (current < MAX_STEP) {
+                    view_pager.setCurrentItem(current);
+                }
+            }
+        });
+
+        kiritesti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int current = view_pager.getCurrentItem() - 1;
+                if (current < MAX_STEP) {
+                    // move to back screen
+                    view_pager.setCurrentItem(current);
+                }
+            }
+        });
     }
 
     public void getUsernameLocal() {
@@ -358,29 +401,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(kepaketkeluarga);
     }
 
-
-    private void backStep(int progress) {
-        if (progress > 1) {
-            progress--;
-            current_step = progress;
-            ViewAnimation.fadeOutIn(testimonial);
-        }
-        String str_progress = String.format(getString(R.string.step_of), current_step, MAX_STEP);
-        testimonial.setText(str_progress);
-    }
-
-    private void nextStep(int progress) {
-        if (progress < MAX_STEP) {
-            progress++;
-            current_step = progress;
-            ViewAnimation.fadeOutIn(testimonial);
-        }
-        String str_progress = String.format(getString(R.string.step_of), current_step, MAX_STEP);
-        testimonial.setText(str_progress);
-    }
-
     private void bottomProgressDots(int current_index) {
-        current_index--;
         LinearLayout dotsLayout = findViewById(R.id.layoutDots);
         ImageView[] dots = new ImageView[MAX_STEP];
 
@@ -392,13 +413,66 @@ public class MainActivity extends AppCompatActivity {
             params.setMargins(10, 10, 10, 10);
             dots[i].setLayoutParams(params);
             dots[i].setImageResource(R.drawable.shape_circle);
-            dots[i].setColorFilter(getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_IN);
+            dots[i].setColorFilter(getResources().getColor(R.color.grey_40), PorterDuff.Mode.SRC_IN);
             dotsLayout.addView(dots[i]);
         }
 
         if (dots.length > 0) {
             dots[current_index].setImageResource(R.drawable.shape_circle);
             dots[current_index].setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
+        }
+    }
+
+    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
+
+        @Override
+        public void onPageSelected(final int position) {
+            bottomProgressDots(position);
+        }
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+
+        }
+    };
+
+    public class MyViewPagerAdapter extends PagerAdapter {
+        private LayoutInflater layoutInflater;
+
+        public MyViewPagerAdapter() {
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            View view = layoutInflater.inflate(R.layout.layout_testimoni, container, false);
+            ((TextView) view.findViewById(R.id.title)).setText(testimonitamu[position]);
+            container.addView(view);
+
+            return view;
+        }
+
+        @Override
+        public int getCount() {
+            return testimonitamu.length;
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object obj) {
+            return view == obj;
+        }
+
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            View view = (View) object;
+            container.removeView(view);
         }
     }
 

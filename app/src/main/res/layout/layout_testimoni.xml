@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Android Rion on 9/16/19 10:42 AM
+  ~ Copyright © 2019 . All rights reserved.
+  ~ Last modified 9/16/19 10:41 AM
+  ~ Kunjungi androidrion.com untuk tutorial Android Studio
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="3dp"
+        android:hint="Pelayanannya prima. Crewnya profesional semua. Mengedepankan kenyamanan dan kepuasan pelanggan"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorPrimary" />
+
+</LinearLayout>
